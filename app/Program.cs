@@ -11,7 +11,8 @@ namespace app
             ConsoleKeyInfo a;
             Campeonato campeonato = new Campeonato();
             do {
-                Console.Write("Digite sua opção: ");
+                Console.Write("1 => nova equipe | 2 => resultado ");
+                Console.WriteLine("Digite sua opção: ");
                 a = Console.ReadKey();            
                 if (a.Key == ConsoleKey.D1) {
                     System.Console.WriteLine("# Adicionando uma nova equipe");
@@ -24,7 +25,10 @@ namespace app
             } while (a.Key != ConsoleKey.D2);
 
             System.Console.WriteLine("Listando o resultado");
+            campeonato.ordenaPontuacao();
             campeonato.resultado();
+
+            System.Console.WriteLine(campeonato.equipes.Count);
             
         }
     }
